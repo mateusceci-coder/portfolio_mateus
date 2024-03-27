@@ -12,7 +12,7 @@ export default function Skills() {
         setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.1, // Ajuste isso conforme necessário
+        threshold: 0.3, // Ajuste isso conforme necessário
       }
     );
 
@@ -45,7 +45,7 @@ export default function Skills() {
   };
 
   return (
-    <section ref={ref} className="flex flex-col items-center mb-10">
+    <section ref={ref} className="flex flex-col items-center">
       <h1 className="dark:text-white font-playfair text-3xl text-center mb-5">
         Skills
       </h1>
@@ -66,7 +66,9 @@ export default function Skills() {
           "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
           "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
           "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg",
-          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-plain.svg"
+          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-plain.svg",
+          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
         ].map((src, index) => (
           <motion.li key={index} variants={itemVariants}>
             <img src={src} width={50} />

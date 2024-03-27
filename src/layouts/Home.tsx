@@ -18,7 +18,7 @@ export default function Home({ isEnglish }: { isEnglish: boolean }) {
         setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.1, // Ajuste conforme necessário para disparar a animação mais cedo ou mais tarde
+        threshold: 0.3, // Ajuste conforme necessário para disparar a animação mais cedo ou mais tarde
       }
     );
 
@@ -37,7 +37,7 @@ export default function Home({ isEnglish }: { isEnglish: boolean }) {
     visible: {
       x: 0,
       opacity: 1,
-      transition: { type: "spring", duration: 1.5 },
+      transition: { type: "spring", duration: 4 },
     },
     hidden: { x: -100, opacity: 0 },
   };
@@ -46,17 +46,13 @@ export default function Home({ isEnglish }: { isEnglish: boolean }) {
     visible: {
       x: 0,
       opacity: 1,
-      transition: { type: "spring", duration: 1.5 },
+      transition: { type: "spring", duration: 4 },
     },
     hidden: { x: 100, opacity: 0 },
   };
 
   return (
-    <section
-      ref={ref}
-      className="flex flex-col items-center gap-10 h-screen"
-    >
-      <div></div>
+    <section ref={ref} className="flex flex-col items-center gap-10 h-screen">
       <motion.div
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
@@ -66,7 +62,7 @@ export default function Home({ isEnglish }: { isEnglish: boolean }) {
           <h1 className="text-5xl font-playfair font-700 dark:text-white mb-4">
             Mateus Ceci
           </h1>
-          <p className="dark:text-white text-xl">
+          <p className="dark:text-white text-xl mb-10">
             {isEnglish
               ? "Turning complex ideas into digital reality."
               : "Transformando ideias complexas em realidade digital."}
@@ -78,41 +74,58 @@ export default function Home({ isEnglish }: { isEnglish: boolean }) {
         animate={isVisible ? "visible" : "hidden"}
         variants={variantsRightToLeft}
       >
-        <div className="flex flex-col gap-2 items-center">
+        <div className="flex flex-col gap-4 items-center">
           <img
             src="src/images/perfil.png"
             alt="perfil photo"
-            className="rounded-full"
-            width={200}
+            className="rounded-full w-9/12 md:w-full"
+            width={350}
           />
           <h2 className="text-2xl text-gray-400 text-center">
             {isEnglish ? "Full Stack Developer" : "Desenvolvedor Full Stack"}
           </h2>
           <div className="grid grid-cols-4 gap-8">
-            <FontAwesomeIcon
-              className="hover:cursor-pointer"
-              icon={faGithub}
-              size="2xl"
-              style={{ color: "#B197FC" }}
-            />
-            <FontAwesomeIcon
-              className="hover:cursor-pointer"
-              icon={faEnvelope}
-              size="2xl"
-              style={{ color: "#B197FC" }}
-            />
-            <FontAwesomeIcon
-              className="hover:cursor-pointer"
-              icon={faWhatsapp}
-              size="2xl"
-              style={{ color: "#0fd712" }}
-            />
-            <FontAwesomeIcon
-              className="hover:cursor-pointer"
-              icon={faLinkedin}
-              size="2xl"
-              style={{ color: "#694ac4" }}
-            />
+            <a href="https://github.com/mateusceci-coder">
+              <FontAwesomeIcon
+                className="hover:cursor-pointer"
+                icon={faGithub}
+                size="2xl"
+                style={{ color: "#B197FC" }}
+              />
+            </a>
+            <a
+              href="mailto:mateusceci@gmail.com"
+              aria-label="E-mail"
+              target="_blank"
+            >
+              <FontAwesomeIcon
+                className="hover:cursor-pointer"
+                icon={faEnvelope}
+                size="2xl"
+                style={{ color: "#B197FC" }}
+              />
+            </a>
+            <a
+              href="https://wa.me/5548991820135"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                className="hover:cursor-pointer"
+                icon={faWhatsapp}
+                size="2xl"
+                style={{ color: "#0fd712" }}
+              />
+            </a>
+            <a href="https://www.linkedin.com/in/mateusceci-coder/">
+              <FontAwesomeIcon
+                className="hover:cursor-pointer"
+                icon={faLinkedin}
+                size="2xl"
+                style={{ color: "#694ac4" }}
+              />
+            </a>
           </div>
         </div>
       </motion.div>
