@@ -76,7 +76,7 @@ export default function Home({ isEnglish }: { isEnglish: boolean }) {
       >
         <div className="flex flex-col gap-4 items-center">
           <img
-            src="src/images/perfil.png"
+            src="/perfil.png"
             alt="perfil photo"
             className="rounded-full w-9/12 md:w-full"
             width={350}

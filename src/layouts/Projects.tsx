@@ -85,7 +85,7 @@ export default function Projects({ isEnglish }: { isEnglish: boolean }) {
           </Accordion>
           <img
             className="rounded-xl"
-            src="src/images/motorhome.png"
+            src="/motorhome.png"
             alt="motorhome"
             width={450}
           />
@@ -129,7 +129,7 @@ export default function Projects({ isEnglish }: { isEnglish: boolean }) {
           <a href="https://fitness-app-1.onrender.com">
             <img
               className="rounded-xl"
-              src="src/images/fitness.png"
+              src="/fitness.png"
               alt="fitness app"
               width={450}
             />
@@ -161,7 +161,10 @@ export default function Projects({ isEnglish }: { isEnglish: boolean }) {
                     ? "This is an advanced todo list, designed to allow you to easily add titles, task descriptions, and their respective statuses. It offers intuitive functionalities, including the ability to search for tasks by title, the option to delete individual tasks, mark tasks as completed, and the capability to remove all completed tasks at once."
                     : "Esta é uma lista de tarefas avançada, projetada para permitir que você adicione facilmente títulos, descrições de tarefas e seus respectivos status. Ela oferece funcionalidades intuitivas, incluindo a busca de tarefas por título, a opção de deletar tarefas individuais, marcar tarefas como concluídas e a capacidade de remover todas as tarefas já finalizadas de uma só vez."}
                 </p>
-                <a className="text-blue-500 hover:underline" href="https://github.com/mateusceci-coder/my-todo-list">
+                <a
+                  className="text-blue-500 hover:underline"
+                  href="https://github.com/mateusceci-coder/my-todo-list"
+                >
                   GitHub
                 </a>
               </AccordionContent>
@@ -170,7 +173,7 @@ export default function Projects({ isEnglish }: { isEnglish: boolean }) {
           <a href="https://my-todo-list-phi-nine.vercel.app/">
             <img
               className="rounded-xl"
-              src="src/images/todo-list.png"
+              src="/todo-list.png"
               alt="Todo List"
               width={450}
             />
@@ -211,7 +214,7 @@ export default function Projects({ isEnglish }: { isEnglish: boolean }) {
           <a href="https://clone-disneyplus-psi-rouge.vercel.app">
             <img
               className="rounded-xl"
-              src="src/images/disney.png"
+              src="/disney.png"
               alt="Disney"
               width={450}
             />

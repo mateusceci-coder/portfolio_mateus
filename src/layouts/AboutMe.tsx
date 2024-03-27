@@ -34,7 +34,7 @@ export default function AboutMe({ isEnglish }: { isEnglish: boolean }) {
   return (
     <section
       ref={ref}
-      className="overflow-x-hidden flex gap-2 flex-col p-4 text-center items-center justify-center dark:text-white mb-10"
+      className="flex gap-2 flex-col p-4 text-center items-center justify-center dark:text-white max-w-[768px] mx-auto mb-10"
     >
       <h1 className="font-playfair text-3xl dark:text-white text-center mb-4">
         {isEnglish ? "About me" : "Sobre Mim"}
