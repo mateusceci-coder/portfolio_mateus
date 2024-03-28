@@ -7,8 +7,12 @@ export default function AboutMe({ isEnglish }: { isEnglish: boolean }) {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.3 }
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.5 }
     );
     if (ref.current) {
       observer.observe(ref.current);
@@ -21,20 +25,15 @@ export default function AboutMe({ isEnglish }: { isEnglish: boolean }) {
   }, []);
 
   // Variantes de animação para o Framer Motion
-  const variantsLeft = {
-    visible: { opacity: 1, x: 0, transition: { type: "spring", duration: 4 } },
-    hidden: { opacity: 0, x: -100 },
-  };
-
-  const variantsRight = {
-    visible: { opacity: 1, x: 0, transition: { type: "spring", duration: 4 } },
-    hidden: { opacity: 0, x: 100 },
+  const variants = {
+    visible: { opacity: 1, x: 0, transition: { type: "spring", duration: 3 } },
+    hidden: { opacity: 0, x: 0 },
   };
 
   return (
     <section
       ref={ref}
-      className="flex gap-2 flex-col p-4 text-center items-center justify-center dark:text-white max-w-[768px] mx-auto mb-10"
+      className="flex gap-2 flex-col p-4 text-center items-center justify-center dark:text-white max-w-[768px] mx-auto mb-20"
     >
       <h1 className="font-playfair text-3xl dark:text-white text-center mb-4">
         {isEnglish ? "About me" : "Sobre Mim"}
@@ -42,7 +41,7 @@ export default function AboutMe({ isEnglish }: { isEnglish: boolean }) {
       <motion.div
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
-        variants={variantsLeft}
+        variants={variants}
       >
         <p className="text-xl">
           {isEnglish
@@ -53,7 +52,7 @@ export default function AboutMe({ isEnglish }: { isEnglish: boolean }) {
       <motion.div
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
-        variants={variantsRight}
+        variants={variants}
       >
         <p className="text-xl">
           {isEnglish
@@ -64,7 +63,7 @@ export default function AboutMe({ isEnglish }: { isEnglish: boolean }) {
       <motion.div
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
-        variants={variantsLeft}
+        variants={variants}
       >
         <p className="text-xl">
           {isEnglish

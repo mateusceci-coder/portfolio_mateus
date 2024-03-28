@@ -9,7 +9,9 @@ export default function Skills() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+        if(entry.isIntersecting) {
+          setIsVisible(true);
+        }
       },
       {
         threshold: 0.3, // Ajuste isso conforme necessário
@@ -25,7 +27,7 @@ export default function Skills() {
         observer.unobserve(ref.current);
       }
     };
-  }, [ref]);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0, scale: 0.95 },
@@ -45,7 +47,7 @@ export default function Skills() {
   };
 
   return (
-    <section ref={ref} className="flex flex-col items-center">
+    <section ref={ref} className="flex flex-col items-center mb-20">
       <h1 className="dark:text-white font-playfair text-3xl text-center mb-5">
         Skills
       </h1>

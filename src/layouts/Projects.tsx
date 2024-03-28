@@ -10,14 +10,18 @@ import {
 export default function Projects({ isEnglish }: { isEnglish: boolean }) {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting && !hasAnimated) {
+          setIsVisible(true);
+          setHasAnimated(true); // Atualiza para garantir que a animação aconteça apenas uma vez
+        }
       },
       {
-        threshold: 0.2, // Ajuste isso conforme necessário
+        threshold: 0.2,
       }
     );
 
@@ -30,7 +34,7 @@ export default function Projects({ isEnglish }: { isEnglish: boolean }) {
         observer.unobserve(ref.current);
       }
     };
-  }, [ref]);
+  }, [hasAnimated]);
 
   const containerVariants = {
     hidden: { opacity: 0, scale: 0.95 },
@@ -45,19 +49,20 @@ export default function Projects({ isEnglish }: { isEnglish: boolean }) {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 0 },
     visible: { opacity: 1, y: 0 },
   };
 
   return (
-    <section ref={ref} className="max-w-full mb-10">
+    <section ref={ref} className="mb-10">
       <h1 className="text-center text-3xl font-playfair dark:text-white p-4">
         {isEnglish ? "Main Projects" : "Projetos Principais"}
       </h1>
       <motion.ul
         variants={containerVariants}
         initial="hidden"
-        animate={isVisible ? "visible" : "hidden"}
+        // Usa isVisible somente se hasAnimated for falso
+        animate={hasAnimated ? "visible" : isVisible ? "visible" : "hidden"}
         className="grid lg:grid-cols-2 justify-center gap-5 max-w-5xl mx-auto"
       >
         <motion.li

@@ -15,7 +15,9 @@ export default function Home({ isEnglish }: { isEnglish: boolean }) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
       },
       {
         threshold: 0.3, // Ajuste conforme necessário para disparar a animação mais cedo ou mais tarde
@@ -31,24 +33,24 @@ export default function Home({ isEnglish }: { isEnglish: boolean }) {
         observer.unobserve(ref.current);
       }
     };
-  }, [ref]);
+  }, []);
 
-  const variantsLeftToRight = {
+  const variantsTop = {
     visible: {
       x: 0,
       opacity: 1,
-      transition: { type: "spring", duration: 4 },
+      transition: { duration: 2 },
     },
-    hidden: { x: -100, opacity: 0 },
+    hidden: { x: 0, opacity: 0 },
   };
 
-  const variantsRightToLeft = {
+  const variantsBottom = {
     visible: {
       x: 0,
       opacity: 1,
-      transition: { type: "spring", duration: 4 },
+      transition: { duration: 2, delay: 0.7 },
     },
-    hidden: { x: 100, opacity: 0 },
+    hidden: { x: 0, opacity: 0 },
   };
 
   return (
@@ -56,7 +58,7 @@ export default function Home({ isEnglish }: { isEnglish: boolean }) {
       <motion.div
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
-        variants={variantsLeftToRight}
+        variants={variantsTop}
       >
         <div className="text-center">
           <h1 className="text-5xl font-playfair font-700 dark:text-white mb-4">
@@ -72,7 +74,7 @@ export default function Home({ isEnglish }: { isEnglish: boolean }) {
       <motion.div
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
-        variants={variantsRightToLeft}
+        variants={variantsBottom}
       >
         <div className="flex flex-col gap-4 items-center">
           <img

@@ -16,7 +16,7 @@ export default function App() {
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} setIsEnglish={setIsEnglish} isEnglish={isEnglish} />
         <Home isEnglish={isEnglish} />
         <Skills />
-        <AboutMe isEnglish={isEnglish} />
+       <AboutMe isEnglish={isEnglish} />
         <Projects isEnglish={isEnglish} />
         <Footer isEnglish={isEnglish} />
       </div>
