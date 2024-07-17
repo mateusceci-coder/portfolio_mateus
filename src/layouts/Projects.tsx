@@ -10,7 +10,7 @@ import {
 export default function Projects({ isEnglish }: { isEnglish: boolean }) {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [hasAnimated, setHasAnimated] = useState(false)
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -131,14 +131,14 @@ export default function Projects({ isEnglish }: { isEnglish: boolean }) {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-          <a href="https://fitness-app-1.onrender.com">
-            <img
-              className="rounded-xl"
-              src="/fitness.png"
-              alt="fitness app"
-              width={450}
-            />
-          </a>
+
+          <img
+            className="rounded-xl"
+            src="/fitness.png"
+            alt="fitness app"
+            width={450}
+          />
+
           <ul className="font-bold flex flex-wrap gap-4 justify-center rounded-xl p-2">
             <li className="text-blue-500">React</li>
             <li className="text-blue-800">Typescript</li>
@@ -153,7 +153,7 @@ export default function Projects({ isEnglish }: { isEnglish: boolean }) {
           variants={itemVariants}
         >
           <h2 className="text-2xl text-center font-bold text-yellow-500">
-            Todo List
+            Skyhill Clone
           </h2>
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
@@ -163,8 +163,8 @@ export default function Projects({ isEnglish }: { isEnglish: boolean }) {
               <AccordionContent>
                 <p className="text-base mb-2">
                   {isEnglish
-                    ? "This is an advanced todo list, designed to allow you to easily add titles, task descriptions, and their respective statuses. It offers intuitive functionalities, including the ability to search for tasks by title, the option to delete individual tasks, mark tasks as completed, and the capability to remove all completed tasks at once."
-                    : "Esta é uma lista de tarefas avançada, projetada para permitir que você adicione facilmente títulos, descrições de tarefas e seus respectivos status. Ela oferece funcionalidades intuitivas, incluindo a busca de tarefas por título, a opção de deletar tarefas individuais, marcar tarefas como concluídas e a capacidade de remover todas as tarefas já finalizadas de uma só vez."}
+                    ? "Clone of the Skyhill website, a store for crossfit equipment. The site was created in React, with Redux for state management, fully responsive and with the function to add and remove products from the cart."
+                    : "Clone do site da skyhill, loja de equipamentos de crossfit. O site foi criado em react, com redux para gerenciamento de estado, totalmente responsivo e com função de adicionar e remover produtos do carrinho"}
                 </p>
                 <a
                   className="text-blue-500 hover:underline"
@@ -175,11 +175,11 @@ export default function Projects({ isEnglish }: { isEnglish: boolean }) {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-          <a href="https://my-todo-list-phi-nine.vercel.app/">
+          <a href="https://skyhill-clone.vercel.app/">
             <img
               className="rounded-xl"
-              src="/todo-list.png"
-              alt="Todo List"
+              src="/skyhill.png"
+              alt="Skyhill"
               width={450}
             />
           </a>
@@ -187,6 +187,7 @@ export default function Projects({ isEnglish }: { isEnglish: boolean }) {
             <li className="text-blue-500">React</li>
             <li className="text-blue-800">Typescript</li>
             <li className="text-blue-300">Tailwindcss</li>
+            <li className="text-red-400">MaterialUI</li>
           </ul>
         </motion.li>
         <motion.li
@@ -194,7 +195,7 @@ export default function Projects({ isEnglish }: { isEnglish: boolean }) {
           variants={itemVariants}
         >
           <h2 className="text-2xl text-center text-yellow-500 font-bold">
-            Disney Plus Clone
+            GPT Genius
           </h2>
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
@@ -204,32 +205,32 @@ export default function Projects({ isEnglish }: { isEnglish: boolean }) {
               <AccordionContent>
                 <p className="text-base mb-2">
                   {isEnglish
-                    ? "This project is a clone of the Disney Plus website, meticulously developed using HTML, SASS, and JavaScript. It stands out for its responsive nature, ensuring a smooth and adaptable user experience across any screen size."
-                    : "Este projeto é um clone do site Disney Plus, meticulosamente desenvolvido utilizando HTML, SASS e JavaScript. Destaca-se por sua natureza responsiva, assegurando uma experiência de usuário fluida e adaptável a qualquer tamanho de tela."}
+                    ? "Created in the NextJs and ChatGPT course, this application uses ChatGPT 3.5-Turbo with a token limit for user chat, as well as creating travel tours, allowing all created tours to be stored."
+                    : "Criado no curso NextJs e ChatGPT, este aplicativo usa ChatGPT 3.5-Turbo com limite de tokens para chat com usuário, além de criar tours para viagens, sendo possivel armazenar todos os tours criados."}
                 </p>
                 <a
                   className="text-blue-500 hover:underline text-base"
-                  href="https://github.com/mateusceci-coder/clone-disneyplus"
+                  href="https://github.com/mateusceci-coder/gptgenius"
                 >
                   GitHub
                 </a>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-          <a href="https://clone-disneyplus-psi-rouge.vercel.app">
+          <a href="https://gptgenius-ashy.vercel.app/">
             <img
               className="rounded-xl"
-              src="/disney.png"
-              alt="Disney"
+              src="/gptgenius.png"
+              alt="gptgenius"
               width={450}
             />
           </a>
 
           <ul className="font-bold flex flex-wrap gap-4 justify-center rounded-xl p-2">
-            <li className="text-red-500">HTML</li>
-            <li className="text-fuchsia-400">SASS</li>
-            <li className="text-yellow-600">Javascript</li>
-            <li className="text-red-600">Gulp</li>
+            <li className="text-red-500">NextJS</li>
+            <li className="text-fuchsia-400">DaisyUI</li>
+            <li className="text-yellow-600">Prisma</li>
+            <li className="text-red-600">ChatGPT</li>
           </ul>
         </motion.li>
       </motion.ul>
