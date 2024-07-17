@@ -70,7 +70,6 @@ export default function Skills() {
           "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg",
           "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-plain.svg",
           "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
-          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
         ].map((src, index) => (
           <motion.li key={index} variants={itemVariants}>
             <img src={src} width={50} />

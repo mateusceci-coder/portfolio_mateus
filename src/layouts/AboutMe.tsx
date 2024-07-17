@@ -71,6 +71,20 @@ export default function AboutMe({ isEnglish }: { isEnglish: boolean }) {
             : "Se você está procurando alguém dedicado, inovador e pronto para enfrentar os desafios do futuro da tecnologia, vamos conversar!"}
         </p>
       </motion.div>
+      <motion.div
+        initial="hidden"
+        animate={isVisible ? "visible" : "hidden"}
+        variants={variants}
+      >
+        <h2 className="text-2xl font-playfair dark:text-white text-center mt-4">
+          {isEnglish ? "Experiencies" : "Experiências"}
+        </h2>
+        <p className="text-xl">
+          {isEnglish
+            ? "Freelance at fairmint company (05/2024-07/2024): Worked as a frontend engineer, contributing to visual improvements, bug fixes, and layout creation."
+            : "Freelance na empresa fairmint (05/2024-07/2024): Atuação com engenheiro frontend, colaborando para melhorias visuais, correção de bugs e criação de layouts"}
+        </p>
+      </motion.div>
     </section>
   );
 }
